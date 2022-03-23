@@ -1,0 +1,15 @@
+i[class*="facebook"] {
+    color: $primaryColor;
+}
+
+i[class*="instagram"] {
+    color: $pink;
+}
+
+i[class*="linkedin"] {
+    color: transparentize($primaryColor, 0.2);
+}
+
+i[class*="twitter"] {
+    color: $tertiaryColor;
+}

@@ -1,0 +1,174 @@
+/* ****** Importing Google Fonts ****** */
+@mixin google-font($font) {
+    // unquoting the $font paraneter to ensure that its ready to be added to the url string that imports the google font in the following line.
+    $font: unquote($font);
+    @import url(https://fonts.googleapis.com/css?family=#{$font}&display=swap);
+    // NB: The syntax #{$variablename} works exactly like ${variablename} within backticks in JS to tell sass that the items within the curly braces is a variabloe or some other statement to be parsed correctly.
+}
+
+
+/* ****** Box Sizing ****** */
+@mixin boxSizing {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+
+/* ****** Box Shadow ****** */
+@mixin boxShadow($values...) {
+    // $values is sa variable argument whic will allow us to add an arbitrary number of arguments to the transform function
+    -o-box-shadow: $values;
+    -ms-box-shadow: $values;
+    -moz-box-shadow: $values;
+    -webkit-box-shadow: $values;
+    -khtml-box-shadow: $values;
+    box-shadow: $values;
+}
+
+/* ******  Border Radius ****** */
+@mixin borderRadius($values...) {
+    // $values is sa variable argument whic will allow us to add an arbitrary number of arguments to the transform function
+    -o-border-radius: $values;
+    -ms-border-radius: $values;
+    -moz-border-radius: $values;
+    -webkit-border-radius: $values;
+    -khtml-border-radius: $values;
+    border-radius: $values;
+}
+
+/* ****** Transform ****** */
+@mixin transform($values) {
+    // $values is sa variable argument whic will allow us to add an arbitrary number of arguments to the transform function
+    -o-transform: $values;
+    -ms-transform: $values;
+    -moz-transform: $values;
+    -webkit-transform: $values;
+    -khtml-transform: $values;
+    transform: $values;
+}
+
+@mixin transformOrigin($val) {
+    // $values is sa variable argument whic will allow us to add an arbitrary number of arguments to the transform function
+    -o-transform-origin: $val;
+    -ms-transform-origin: $val;
+    -moz-transform-origin: $val;
+    -webkit-transform-origin: $val;
+    -khtml-transform-origin: $val;
+    transform-origin: $val;
+}
+
+/* ****** Transitions ****** */
+
+@mixin transitionAll($duration) {
+    -o-transform: all $duration ease;
+    -ms-transition: all $duration ease;
+    -moz-transition: all $duration ease;
+    -webkit-transition: all $duration ease;
+    -khtml-transition: all $duration ease;
+    transition: all $duration ease;
+}
+
+@mixin transition($values...) {
+    // $values is sa variable argument whic will allow us to add an arbitrary number of arguments to the transform function    -o-transition: $value;
+    -o-transition: $values;
+    -ms-transition: $values;
+    -moz-transition: $values;
+    -webkit-transition: $values;
+    transition: $values;
+}
+
+
+/* ****** Backgrounds ****** */
+@mixin background ($bcg-color, $bcg-img, $bcg-repeat: no-repeat, $bcg-size: cover, $bcg-position: center) {
+    background: join($bcg-color, $bcg-img, "comma");
+    background-repeat: $bcg-repeat;
+    background-size: $bcg-size;
+    background-position: $bcg-position
+}
+
+
+/* ****** Rounded Corners and Circles ****** */
+@mixin rounded($value) {
+    border-radius: $value;
+}
+
+@mixin circle($val) {
+    @include rounded(100%);
+    height: $val;
+    width: $val;
+}
+
+
+
+/*
+*
+* ***************** LAYOUT *******************
+*
+*/
+
+/* Flex Box */
+@mixin flex {
+    display: -o-flex;
+    display: -ms-flex;
+    display: -moz-flex;
+    display: -webkit-flex;
+    display: -khtml-flex;
+    display: flex;
+}
+
+@mixin flexDirection($value : row) {
+    -ms-flex-direction: $value;
+    -moz-flex-direction: $value;
+    -o-flex-direction: $value;
+    -webkit-flex-direction: $value;
+    -khtml-flex-direction: $value;
+    flex-direction: $value;
+}
+
+/* Grid System */
+@mixin grid {
+    display: -o-grid;
+    display: -ms-grid;
+    display: -moz-grid;
+    display: -webkit-grid;
+    display: -khtml-grid;
+    display: grid;
+}
+
+//Align Items
+@mixin alignItems ($val: center) {
+    -ms-align-items: $val;
+    align-items: $val;
+}
+
+
+/* Center Objects: The following mixins will center an object cross-center, vertically and horizontally, respecetively */
+@mixin crossCenter {
+    @include flex;
+    justify-content: center;
+    @include alignItems;
+}
+
+
+// ********* Media Query ***********
+@mixin minQuery($size) {
+    @media screen and (min-width: $size) {
+        @content;
+    }
+}
+
+@mixin maxQuery($size) {
+    @media screen and (max-width: $size) {
+        @content;
+    }
+}
+
+
+@mixin objectFit($fit: cover, $position: center) {
+    object-fit: $fit;
+    -o-object-fit: $fit;
+    object-position: $position;
+    -o-object-position: $position;
+}
+

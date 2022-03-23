@@ -1,0 +1,56 @@
+$themeColor: #92043a;
+$primaryColor: rgb(56, 56, 163);
+$primaryColorDark: darken($primaryColor, 30);
+$secondaryColor: rgb(255, 157, 0);
+$secondaryColorDark: darken($secondaryColor, 30);
+$themeColor: #92043a;
+// $primaryColor: rgb(56, 56, 163);
+$primaryColor: rgb(56, 56, 163);
+$primaryColorDark: darken($primaryColor, 30);
+$accent: rgb(8, 88, 141);
+$secondaryColor: linear-gradient(45deg, rgba(13, 0, 0, 0.97), rgba(9, 1, 37, 0.98));
+// $tertiaryColor: #8b162f;
+$tertiaryColor: #229cee;
+$tertiaryGradient: linear-gradient(-155deg, rgba(11, 110, 167, 0.938), rgba(140, 13, 214, 0.712));
+
+// Color Guide: A list of other colors that work well with the brand's primaryColor
+$green: rgb(13, 148, 20);
+$green: rgb(166, 194, 10);
+$orange: rgb(219, 144, 5);
+$orange: darken(pink, 30);;
+$offWhite: #e9e9e9;
+$pink: #92043a;
+$yellow: #eea508;
+// $gray: #444444;
+$gray: #000;
+$lightGray: #efefef;
+$white: #fff;
+$black: #000;
+
+/*  Social Icons Colors */
+$twitter: rgb(24, 102, 192);
+$linkedin: rgb(5, 64, 104);
+$instagram: rgb(189, 8, 144);
+
+
+/* Heights and Weidths */
+$beerBottleHeight: 130%;
+$beerGlassHeight: calc($beerBottleHeight / 2.5);
+$svgImageWidth: calc(50px + 3vw);
+
+/* Alignments */
+$mainPadding-x: 5%;
+$mainPadding-y: 2em;
+$mainPadding-x-sm: 5%;
+$mainPadding-y-sm: 1.5em;
+$pageBannerSpace: 1em;
+
+/* Border Radius */
+$cardRadius: 5px;
+
+
+/* Shadows */
+$cardShadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+
+/* Main Content Area */
+$sectionSpacing: 3em;

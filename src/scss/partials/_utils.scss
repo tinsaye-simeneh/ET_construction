@@ -1,0 +1,49 @@
+/* ****** Global Grid Style ****** */
+* {
+    margin: 0;
+    padding: 0;
+    @include boxSizing;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.flex {
+    @include flex;
+}
+
+.flex-row {
+    @include flexDirection(row);
+}
+
+.flex-column {
+    @include flexDirection(column);
+}
+
+/* ****** Global Grid Style ****** */
+.grid {
+    @include grid;
+}
+
+// ******* Container ********
+.container {
+    @extend .grid;
+    justify-content: center;
+}
+
+
+// ************ FeedBacks ************
+.form-feedback {
+    // @include textFontSize(0.75rem);
+    font-size: 0.85rem;
+    padding: 0.2rem;
+}
+
+.error {
+    color: rgb(255, 0, 34);
+}

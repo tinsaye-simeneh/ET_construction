@@ -1,0 +1,16 @@
+// Since all projects may not require all the modules in the partials folder,
+// use this config file to import only modules that matter to the current project.
+// However, this case will be quite unlikely
+
+//*********** Importing Modules ***********
+@import "../partials/reset";
+@import "./brand";
+@import "../partials/variables";
+@import "../partials/mixins";
+@import "../partials/function";
+@import "../partials/typography";
+@import "../partials/buttons";
+@import "../partials/utils";
+@import "../partials/forms";
+@import "../partials/card";
+@import "../partials/social";

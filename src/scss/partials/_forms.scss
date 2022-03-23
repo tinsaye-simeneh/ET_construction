@@ -1,0 +1,127 @@
+.form-container {
+    padding: 1.5em 1em;
+    width: 90%;
+    max-width: 480px;
+    margin: auto;
+
+    .form-title {
+        margin-bottom: 0.5em;
+        text-align: center;
+        color: $gray;
+
+        &+.form-paragraph {
+            text-align: center;
+            margin: 0.5em auto;
+            color: $gray;
+
+            span {
+                color: $pink;
+            }
+        }
+    }
+}
+
+.form {
+    width: 100%;
+}
+
+.form-group {
+    width: 100%;
+    @include flex;
+    @include flexDirection(column);
+    margin-bottom: 1em;
+    position: relative;
+}
+
+label {
+    text-transform: capitalize;
+    color: $gray;
+    // @include transform(translate(.5em, 150%));
+    // @include transition(all 0.2s ease);
+    z-index: -1;
+}
+
+label.slide-up {
+    font-size: 0.875rem;
+    color: $primaryColor;
+    @include transform(translateY(0));
+}
+
+input,
+select,
+textarea {
+    background-color: transparent;
+    padding: 0.875em 0.5em;
+    // color: $white;
+}
+
+.form-container,
+input,
+select,
+textarea {
+    @include borderRadius(3px);
+    border: 0.5px solid $white;
+}
+
+.form-paragraph {
+    margin-top: 0.5em;
+}
+
+// SEARCH FORMS
+.search-form {
+    // display: none;
+    padding: 0;
+
+    form {
+        display: none;
+    }
+
+    .form-group {
+        border: 0;
+        @include grid;
+        grid-template-columns: 90% 10%;
+        justify-content: center;
+        @include alignItems(center);
+        margin: auto;
+        overflow: hidden;
+
+        .search-icon {
+            background-color: darken($primaryColor, 20);
+            height: 100%;
+            margin: auto;
+            border-left: 1px solid rgba(0, 0, 0, 0.13);
+            @include flex;
+            justify-content: center;
+            @include alignItems(center);
+            cursor: pointer;
+            @include boxShadow(-3px 0 4px rgba(0, 0, 0, 0.3));
+
+            img,
+            svg {
+                width: 70%;
+
+                #Search {
+                    fill: transparentize($white, 0.15);
+                    @include transition(fill 0.4s ease);
+
+                    &.active {
+                        fill: $orange;
+                    }
+                }
+
+            }
+
+            &:hover {
+                #Search {
+                    fill: $orange;
+                }
+            }
+        }
+
+        input.form-control {
+            border: 0;
+            outline: 0;
+            width: 100%;
+        }
+    }
+}

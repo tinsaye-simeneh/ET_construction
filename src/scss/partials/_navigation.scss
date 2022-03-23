@@ -1,0 +1,97 @@
+// Navigation: Logo and Menus
+nav {
+    height: 50px;
+    @media screen and (min-width: 768px) {
+        height: 80px;
+    }
+
+    .menu-items {
+
+        .menu-item {
+            display: inline-block;
+            cursor: pointer;
+            font-size: 0.75rem;
+
+            a {
+                color: $gray;
+                @include transition(all 0.3s ease);
+
+                &:hover,
+                &.active {
+                    color: $orange;
+                }
+            }
+        }
+
+        @media screen and (min-width: 768px) {
+
+            .menu-item:not(:last-child) {
+                margin-right: 1em;
+            }
+        }
+    }
+}
+
+nav#main-nav {
+    padding: 1em;
+    justify-content: space-between;
+    @include alignItems(center);
+    @include boxShadow(0 3px 8px rgba(0, 0, 0, 0.2));
+
+    @media screen and (min-width: 768px) {
+        padding: 1.5em 1rem;
+    }
+
+    .menu-items {
+        @include alignItems(center);
+
+        .menu-item {
+
+            .balance {
+                font-weight: 600;
+                color: $primaryColor;
+            }
+        }
+    }
+
+    span.brand-name {
+        @media screen and (max-width: 767px) {
+            & {
+                // display: none;
+            }
+        }
+
+        span {
+            color: $orange;
+        }
+    }
+}
+
+
+
+// #logo {
+//     color: $primaryColor;
+//     font-style: italic;
+//     font-size: 1.625rem;
+//     font-weight: 600;
+//     @include flex;
+//     font-size: 1.3rem;
+
+//     @media screen and (min-width: 768px) {
+//         font-size: 1.7rem;
+//     }
+
+//     span.brand-name {
+//         span {
+//             color: $orange;
+//         }
+//     }
+
+//     img {
+//         display: none;
+//         width: 30px;
+//         object-fit: contain;
+//         margin-right: 0.2em;
+//     }
+
+// }
